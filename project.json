@@ -1,0 +1,24 @@
+{
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "nx run client:dev"
+          },
+          {
+            "command": "nx run client:watch:ssr"
+          },
+          {
+            "command": "nx run server:dev"
+          }
+        ]
+      }
+    },
+    "build": {
+      "executor": "nx:run-script",
+      "options": { "script": "nx run server:build" }
+    }
+  }
+}

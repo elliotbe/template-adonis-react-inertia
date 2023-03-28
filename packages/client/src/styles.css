@@ -1,0 +1,28 @@
+html,
+body {
+  background-color: #181921;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  height: 100vh;
+  color: #f7f8fa;
+  position: relative;
+}
+
+body:before {
+  content: '';
+  background: #f4b740;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  position: absolute;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #f4b740;
+  text-decoration: none;
+}

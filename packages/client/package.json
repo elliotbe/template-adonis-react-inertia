@@ -1,0 +1,24 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite serve",
+    "watch:ssr": "vite build -m development -c vite.config.ssr.ts -w -l silent",
+    "build": "tsc && vite build",
+    "build:ssr": "tsc && vite build -c vite.config.ssr.ts"
+  },
+  "dependencies": {
+    "@inertiajs/react": "^1.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.31",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.2.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.1"
+  }
+}

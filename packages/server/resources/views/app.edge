@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.ico">
+
+  @set('entrypoints', entrypoints())
+
+  @if(inDev)
+    <script type="module">
+      import RefreshRuntime from "http://localhost:8080/@react-refresh"
+      RefreshRuntime.injectIntoGlobalHook(window)
+      window.$RefreshReg$ = () => {}
+      window.$RefreshSig$ = () => (type) => type
+      window.__vite_plugin_react_preamble_installed__ = true
+    </script>
+    <script type="module" src="http://localhost:8080/client/src/entrypoint-csr.tsx"></script>
+  @else
+    @each(js in entrypoints.js)
+      <script type="module" src="/assets/{{js}}" defer></script>
+    @end
+  @end
+
+  @each(css in entrypoints.css)
+    <link rel="stylesheet" type="text/css" href="/assets/{{css}}">
+  @end
+
+  {{--  <title>AdonisJS - A fully featured web framework for Node.js</title>  --}}
+
+  @inertiaHead
+</head>
+<body>
+  {{--  {{ inspect(entrypoints) }}  --}}
+  @inertia
+</body>
+</html>
